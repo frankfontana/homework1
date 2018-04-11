@@ -1,0 +1,5 @@
+<launch>
+	<node name="student" pkg="homework1" type="talker" output="screen"/>
+	<node name="key_input_node" pkg="homework1" type="key_input_node" output="screen"/>
+	<node name="message_listener" pkg="homework1" type="message_listener" output="screen"/>
+</launch>
