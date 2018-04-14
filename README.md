@@ -14,7 +14,7 @@ il link:<br>
 https://github.com/sdipendra/ros-projects/blob/master/src/keyboard_non_blocking_input/src/keyboard_non_blocking_input_node.cpp
 
 E' stato creato un launch file di nome "homework1.launch" all'interno della cartella launch/ in modo da semplificare l'esecuzione del codice implementato.
-E' possibile lanciare i nodi con il comando: <b>"roslaunch homework1 homework1.launch".</b>
+E' possibile lanciare i nodi con il comando:<br><b>"roslaunch homework1 homework1.launch".</b>
 
 Sono stati creati 2 file .msg all'interno della cartella msg/ relativi ai topic "commands" e "messages".
 Il primo file Student.msg contiene i dati relativi ad uno studente:<br>
