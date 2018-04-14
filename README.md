@@ -17,13 +17,13 @@ E' possibile lanciare i nodi con il comando: <b>"roslaunch homework1 homework1.l
 
 Sono stati creati 2 file .msg all'interno della cartella msg/ relativi ai topic "commands" e "messages".
 Il primo file Student.msg contiene i dati relativi ad uno studente:
--string name
--uint8 age
--string course
--string text
+-string name<br>
+-uint8 age<br>
+-string course<br>
+-string text<br>
 Il campo text permette di concatenare i 3 campi precendeti.
 
 Il secondo file Command.msg contiene un campo uint8 command per gestire i caratteri letti da tastiera.
--uint8 command
+-uint8 command<br>
 
 ![alt text](https://raw.githubusercontent.com/frankfontana/homework1/master/images/rosgraph.jpg)
