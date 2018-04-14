@@ -1,9 +1,9 @@
 # homework1
 
 E' stato creato il package ROS "homework1" contenente 3 nodi:
-- Il nodo student pubblica, 1 volta al secondo un messaggio contenente un nome, un età, e un corso di laurea.
-- Il nodo key_input_node permette di selezionare da tastiera quale parte del messaggio verrà mostrata a video.
-- Il nodo commands_messages_listener mostra a video la parte del messaggio selezionata.<br>
+- Il nodo <b>"student"</b> pubblica, 1 volta al secondo un messaggio contenente un nome, un età, e un corso di laurea.
+- Il nodo <b>"key_input_node"</b> permette di selezionare da tastiera quale parte del messaggio verrà mostrata a video.
+- Il nodo <b>"commands_messages_listener"</b> mostra a video la parte del messaggio selezionata.<br>
 Digitando 'a' verrà stampato tutto il messaggio.<br>
 Digitando 'n' verrà stampato solo il nome.<br>
 Digitando 'e' verrà stampata solo l'età.<br>
