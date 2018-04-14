@@ -30,6 +30,7 @@ Il secondo file Command.msg contiene un campo per gestire i caratteri letti da t
 All'interno del file sorgente "commands_messages_listener.cpp" sono state predisposte 2 funzioni callback,
 una per ogni topic, in modo da gestire i caratteri letti da tastiera e le stampe a video delle strighe relative.
 Sono state create inoltre due funzioni di supporto "getChar()" e "setChar()" per passare il carattere letto da tastiera e gestire correttamente le stampe a video.
+Viene stampata a video una sola stringa per carattere digitato e non ripetutamente fino alla ricezione del prossimo carattere.
 
 Il codice sorgente sorgente relativo a "student.cpp" e "commands_messages_listener.cpp" è stato implementato sfruttando il ROS tutorial al seguente link:
 http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29
