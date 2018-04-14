@@ -1,5 +1,15 @@
+/**
+ *  Fontana Francesco vr081502
+ *  Laboratorio Ciberfisico 2018
+ *  Informatica
+ *  Università di Verona 
+ */
+
 /*
 Code to get keyboard inputs without blocking the loop and without pressing enter
+*
+*author:https://github.com/sdipendra/ros-projects/blob/master/src/keyboard_non_blocking_input/src/keyboard_non_blocking_input_node.cpp
+*
 */
 
 #include <ros/ros.h>
@@ -46,7 +56,10 @@ char getch()
 	return (buff);
 }
 
-
+/*
+* Il nodo key_input_node permette di selezinare da tastiera quale
+* parte del messaggio verrà mostrata a video.
+*/
 int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "key_input_node");

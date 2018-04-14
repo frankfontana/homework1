@@ -1,28 +1,8 @@
-/*
- * Copyright (C) 2008, Morgan Quigley and Willow Garage, Inc.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *   * Redistributions of source code must retain the above copyright notice,
- *     this list of conditions and the following disclaimer.
- *   * Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in the
- *     documentation and/or other materials provided with the distribution.
- *   * Neither the names of Stanford University or Willow Garage, Inc. nor the names of its
- *     contributors may be used to endorse or promote products derived from
- *     this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
+/**
+ *  Fontana Francesco vr081502
+ *  Laboratorio Ciberfisico 2018
+ *  Informatica
+ *	Università di Verona
  */
 
 // %Tag(FULLTEXT)%
@@ -31,25 +11,100 @@
 #include "homework1/Student.h"
 #include "homework1/Command.h"
 
+char carattereLetto; // carattere letto da tastiera
+
+// setta il carattere letto da tastiera
+void setChar(char command)
+{
+
+    carattereLetto = command;
+}  
+
+// ritorna il carattere letto da tastiera
+char getChar()
+{
+
+  return carattereLetto;
+}
+
 /**
- * This tutorial demonstrates simple receipt of messages over the ROS system.
+ * 
  */
 // %Tag(CALLBACK)%
 void messageCallback(const homework1::Student::ConstPtr& text)
 {
-  ROS_INFO("I heard: [%s]", text->text.c_str());
+  //ROS_INFO("I heard: [%s]", text->name.c_str());
+
+  char c;
+
+  c = getChar();
+
+  if (c == 'a')
+  {
+    
+    ROS_INFO("Print all: [%s]", text->text.c_str());
+
+    setChar('\0');
+  
+  }
+  else if (c == 'n')
+  {
+
+    ROS_INFO("Print name: [%s]", text->name.c_str());
+
+    setChar('\0');
+
+  }
+  else if (c == 'e')
+  {
+    
+    ROS_INFO("Print age: [%i]", (int) text->age);
+
+    setChar('\0');
+
+  }
+  else if (c == 'c')
+  { 
+
+    ROS_INFO("Print course: [%s]", text->course.c_str());
+
+    setChar('\0');
+  }
+
+
 }
 // %EndTag(CALLBACK)%
+
+// %Tag(CALLBACK)%
 void commandCallback(const homework1::Command::ConstPtr& character)
 {
-  if (character->command == 'a' || character->command == 'n' || character->command == 'e' || character->command == 'c')
+  //ROS_INFO("I heard: [%c]", character->command);
+
+  if (character->command == 'a')
   {
-    ROS_INFO("I heard: [%c]", character->command);
-    
+        
+    setChar('a'); 
+  }
+  else if (character->command == 'n')
+  {
+
+    setChar('n');
+  }
+  else if (character->command == 'e')
+  {
+
+    setChar('e');
+  }
+  else if (character->command == 'c')
+  {
+    setChar('c');
   }
 }
+// %EndTag(CALLBACK)%
 
-
+/*
+* Il nodo commands_messages_listener mostra a video la parte del messaggio selezionata
+*/
 int main(int argc, char **argv)
 {
   /**
@@ -62,7 +117,7 @@ int main(int argc, char **argv)
    * You must call one of the versions of ros::init() before using any other
    * part of the ROS system.
    */
-  ros::init(argc, argv, "message_listener");
+  ros::init(argc, argv, "commands_messages_listener");
 
   /**
    * NodeHandle is the main access point to communications with the ROS system.

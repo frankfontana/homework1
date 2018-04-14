@@ -1,13 +1,21 @@
+/**
+ *  Fontana Francesco vr081502
+ *  Laboratorio Ciberfisico 2018
+ *  Informatica
+ *  Università di Verona
+ */
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "homework1/Student.h"
-
+#include <stdio.h>
 #include <sstream>
 #include <string>
 #include <iostream>
 
 /**
- * This tutorial demonstrates simple sending of messages over the ROS system.
+ * Il nodo student pubblica, 1 volta al secondo, un messaggio
+ * contenente un nome, un età, e un corso di laurea.
+ *
  */
 int main(int argc, char **argv)
 {
@@ -60,29 +68,22 @@ int main(int argc, char **argv)
   while (ros::ok())
   {
     /**
-     * This is a message object. You stuff it with data, and then publish it.
+     * 
      */
-    std_msgs::String msg;
 
     homework1::Student student_info;
 
-    student_info.first_name = "Francesco";
-    student_info.age = 29;
+    student_info.name = "Francesco";
+    student_info.age = (uint8_t) 29;
     student_info.course = "Informatica";
 
     std::stringstream ss;
     
-    ss << "Francesco 29 Informatica " << count;
-    
-    //msg.data = ss.str();
-
-    //student_info.data = ss.str();
+    ss << student_info.name + " " << (int) student_info.age << " " + student_info.course + " " << count;
 
     student_info.text = ss.str();
 
     ROS_INFO("%s", student_info.text.c_str());
-
-    //ROS_INFO("%s", student_info.first_name);
 
     /**
      * The publish() function is how you send messages. The parameter
