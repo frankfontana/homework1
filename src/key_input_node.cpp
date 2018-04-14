@@ -57,7 +57,7 @@ char getch()
 }
 
 /*
-* Il nodo key_input_node permette di selezinare da tastiera quale
+* Il nodo key_input_node permette di selezionare da tastiera quale
 * parte del messaggio verrà mostrata a video.
 */
 int main(int argc, char **argv)
