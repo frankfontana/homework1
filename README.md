@@ -13,7 +13,7 @@ Il codice sorgente per implementare il nodo publisher "key_input_node" è stato 
 il link:<br>
 https://github.com/sdipendra/ros-projects/blob/master/src/keyboard_non_blocking_input/src/keyboard_non_blocking_input_node.cpp
 
-E' stato creato un launch file di nome "homework1.launch" in modo da semplificare l'esecuzione del codice implementato.
+E' stato creato un launch file di nome "homework1.launch" all'interno della cartella launch/ in modo da semplificare l'esecuzione del codice implementato.
 E' possibile lanciare i nodi con il comando: <b>"roslaunch homework1 homework1.launch"</b>
 
 Sono stati creati 2 file .msg all'interno della cartella msg/ relativi ai topic "commands" e "messages".
@@ -26,5 +26,12 @@ Il campo text permette di concatenare i 3 campi precendeti.
 
 Il secondo file Command.msg contiene un campo uint8 command per gestire i caratteri letti da tastiera.<br>
 -uint8 command<br>
+
+All'interno del file sorgente "commands_messages_listener.cpp" sono state predisposte 2 funzioni callback,
+una per ogni topic, in modo da gestire i caratteri letti da tastiera e le stampe a video delle strighe relative.
+Sono state create inoltre due funzioni di supporto "getChar()" e "setChar()" per passare il carattere letto da tastiera e gestire correttamente le stampe a video.
+
+Il codice sorgente sorgente relativo a "student.cpp" e "commands_messages_listener.cpp" è stato implementato sfruttando il ROS tutorial al seguente link:
+http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29
 
 ![alt text](https://raw.githubusercontent.com/frankfontana/homework1/master/images/rosgraph.jpg)
