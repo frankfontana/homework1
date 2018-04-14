@@ -203,9 +203,9 @@ add_executable(student src/student.cpp)
 target_link_libraries(student ${catkin_LIBRARIES})
 add_dependencies(student homework1_generate_messages_cpp)
 
-add_executable(message_listener src/message_listener.cpp)
-target_link_libraries(message_listener ${catkin_LIBRARIES})
-add_dependencies(message_listener homework1_generate_messages_cpp)
+add_executable(commands_messages_listener src/commands_messages_listener.cpp)
+target_link_libraries(commands_messages_listener ${catkin_LIBRARIES})
+add_dependencies(commands_messages_listener homework1_generate_messages_cpp)
 
 add_executable(key_input_node src/key_input_node.cpp)
 target_link_libraries(key_input_node ${catkin_LIBRARIES})
