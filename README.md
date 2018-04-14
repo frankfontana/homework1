@@ -24,7 +24,7 @@ Il primo file Student.msg contiene i dati relativi ad uno studente:<br>
 -string text<br>
 Il campo text permette di concatenare i 3 campi precedenti.
 
-Il secondo file Command.msg contiene un campo uint8 command per gestire i caratteri letti da tastiera.<br>
+Il secondo file Command.msg contiene un campo per gestire i caratteri letti da tastiera.<br>
 -uint8 command<br>
 
 All'interno del file sorgente "commands_messages_listener.cpp" sono state predisposte 2 funzioni callback,
